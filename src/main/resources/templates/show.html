@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div>
+        <a href="/" class="btn btn-outline-primary">Show All Tasks</a>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5>Title :</h5>
+            <span th:text="${task.title}"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5>Description :</h5>
+            <p th:text="${task.description}"></p>
+        </div>
+    </div>
+    <div>
+        <a th:href="@{/delete/{id}(id=${task.id})}" class="btn btn-outline-danger">Delete this task</a>
+    </div>
+</div>
+</body>
+</html>
